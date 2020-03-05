@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:niger_app/authentication/login.dart';
 import 'package:niger_app/authentication/signup.dart';
+import 'package:niger_app/widgets/onboarding.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,11 +23,12 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.indigo,
       ),
-      home: SignUpPage(),
+      home: OnBoarding(),
       debugShowCheckedModeBanner: false,
       routes: {
         "Login": (context) => LoginPage(),
-        "signup": (context) => SignUpPage()
+        "signup": (context) => SignUpPage(),
+        "onboarding": (context) => OnBoarding()
       },
     );
   }
