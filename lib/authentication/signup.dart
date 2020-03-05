@@ -33,16 +33,21 @@ class _SignUpPageState extends State<SignUpPage> {
               children: <Widget>[
                 Center(
                     child: Padding(
-                      padding: EdgeInsets.only(top: 20),
+                      padding: EdgeInsets.zero,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Padding(
                             padding:
-                                EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                                EdgeInsets.zero,
                             child: Container(
-                              height: 120,
+                              height: height*0.3,
+                              width: width,
+                              child: Image.asset(
+                                "assets/images/zuma.jpg",
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                           Padding(
