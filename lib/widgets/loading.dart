@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class LoadingScreen extends StatelessWidget {
-
   final double opacity;
   final Color color;
   final Widget child;
@@ -13,31 +12,29 @@ class LoadingScreen extends StatelessWidget {
   LoadingScreen({
     Key key,
     @required this.inAsyncCall,
-    this.opacity =0.6,
+    this.opacity = 0.6,
     this.color = Colors.white,
     this.progressIndicator = const CircularProgressIndicator(),
     this.offset,
     this.dismissable = false,
     @required this.child,
-}) : assert(child != null),
-    assert(inAsyncCall != null),
-    super(key: key);
+  })  : assert(child != null),
+        assert(inAsyncCall != null),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     List<Widget> widgetList = [];
 
     widgetList.add(child);
 
-    if(inAsyncCall) {
+    if (inAsyncCall) {
       Widget layOutProgressIndicator;
-      if(offset == null) {
+      if (offset == null) {
         layOutProgressIndicator = Center(
           child: Container(
             height: 60,
             width: 60,
-
             child: Align(
               alignment: Alignment.center,
               child: SizedBox(
@@ -68,12 +65,9 @@ class LoadingScreen extends StatelessWidget {
       ];
 
       widgetList += modal;
-
     }
     return new Stack(
-
       children: widgetList,
-
     );
   }
 }

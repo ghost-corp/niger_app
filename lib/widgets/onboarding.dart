@@ -9,55 +9,40 @@ class OnBoarding extends StatefulWidget {
 class _OnBoardingState extends State<OnBoarding> {
   @override
   Widget build(BuildContext context) {
-
     final pageList = [
       PageModel(
-        color: Colors.grey.shade300,
-        heroAssetPath: "assets/images/map.png",
-        title: Text(""),
-        body: Text(
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed"
-              " diam nonumy eirmod tempor invidunt ut labore et dolore.",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.grey.shade600,
-            fontSize: 22
+          color: Colors.grey.shade300,
+          heroAssetPath: "assets/images/map.png",
+          title: Text(""),
+          body: Text(
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed"
+            " diam nonumy eirmod tempor invidunt ut labore et dolore.",
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.grey.shade600, fontSize: 22),
           ),
-        ),
-        iconAssetPath: ""
-      ),
-
+          iconAssetPath: ""),
       PageModel(
           color: Colors.grey.shade300,
           heroAssetPath: "assets/images/gov.jpg",
           title: Text(""),
           body: Text(
             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed"
-                " diam nonumy eirmod tempor invidunt ut labore et dolore.",
+            " diam nonumy eirmod tempor invidunt ut labore et dolore.",
             textAlign: TextAlign.center,
-            style: TextStyle(
-                color: Colors.grey.shade600,
-                fontSize: 22
-            ),
+            style: TextStyle(color: Colors.grey.shade600, fontSize: 22),
           ),
-        iconAssetPath: ""
-      ),
-
+          iconAssetPath: ""),
       PageModel(
           color: Colors.grey.shade300,
           heroAssetPath: "assets/images/roundabout.jpg",
           title: Text(""),
           body: Text(
             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed"
-                " diam nonumy eirmod tempor invidunt ut labore et dolore.",
+            " diam nonumy eirmod tempor invidunt ut labore et dolore.",
             textAlign: TextAlign.center,
-            style: TextStyle(
-                color: Colors.grey.shade600,
-                fontSize: 22
-            ),
+            style: TextStyle(color: Colors.grey.shade600, fontSize: 22),
           ),
-        iconAssetPath: ""
-      )
+          iconAssetPath: "")
     ];
 
     return Scaffold(

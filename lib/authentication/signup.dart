@@ -165,7 +165,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 value: checkedValue,
                               ),
                               Padding(
-                                padding:  EdgeInsets.only(top: 15.0),
+                                padding: EdgeInsets.only(top: 15.0),
                                 child: GestureDetector(
                                   child: RichText(
                                       text: TextSpan(
