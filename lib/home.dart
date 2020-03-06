@@ -8,23 +8,21 @@ import 'widgets/menu_item.dart';
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double iconSize = kWidth(context) * 0.15;
     List<MenuData> menuItemsData = [
       MenuData(
           icon: Icons.history,
-          iconSize: kWidth(context) * 0.15,
+          iconSize: iconSize,
           text: "History",
           onTap: () {}),
       MenuData(
-          icon: Icons.tram,
-          iconSize: kWidth(context) * 0.15,
-          text: "Tourism",
-          onTap: () {}),
+          icon: Icons.tram, iconSize: iconSize, text: "Tourism", onTap: () {}),
       MenuData(
           image: Image.asset(
             "assets/icons/groupX3.png",
             color: Colors.white,
           ),
-          iconSize: kWidth(context) * 0.15,
+          iconSize: iconSize,
           text: "People",
           useImageInPlaceOfIcon: true,
           onTap: () {}),
@@ -33,7 +31,7 @@ class Home extends StatelessWidget {
             "assets/icons/cultureX3.png",
             color: Colors.white,
           ),
-          iconSize: kWidth(context) * 0.15,
+          iconSize: iconSize,
           text: "Culture",
           useImageInPlaceOfIcon: true,
           onTap: () {}),
@@ -42,7 +40,7 @@ class Home extends StatelessWidget {
             "assets/icons/sportX3.png",
             color: Colors.white,
           ),
-          iconSize: kWidth(context) * 0.15,
+          iconSize: iconSize,
           text: "Sports",
           useImageInPlaceOfIcon: true,
           onTap: () {}),
@@ -51,13 +49,13 @@ class Home extends StatelessWidget {
             "assets/icons/lgaX3.png",
             color: Colors.white,
           ),
-          iconSize: kWidth(context) * 0.17,
+          iconSize: iconSize,
           text: "LGA",
           useImageInPlaceOfIcon: true,
           onTap: () {}),
       MenuData(
           icon: Icons.directions_bus,
-          iconSize: kWidth(context) * 0.15,
+          iconSize: iconSize,
           text: "NSTA",
           onTap: () {}),
       MenuData(
@@ -65,13 +63,13 @@ class Home extends StatelessWidget {
             "assets/icons/emergencyX3.png",
             color: Colors.white,
           ),
-          iconSize: kWidth(context) * 0.17,
+          iconSize: iconSize,
           text: "Emergency",
           useImageInPlaceOfIcon: true,
           onTap: () {}),
       MenuData(
           icon: Icons.camera_alt,
-          iconSize: kWidth(context) * 0.15,
+          iconSize: iconSize,
           text: "Gallery",
           onTap: () {})
     ];
@@ -153,15 +151,17 @@ class Home extends StatelessWidget {
                     height: double.infinity,
                     width: kWidth(context),
                     child: GridView.builder(
-                        padding: EdgeInsets.only(top: 30),
                         itemCount: menuItemsData.length,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 3, childAspectRatio: 0.9),
                         itemBuilder: (context, index) {
-                          return Padding(
-                            padding: EdgeInsets.all(20),
-                            child: MenuItem(
-                              menuData: menuItemsData[index],
+                          return Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Padding(
+                              padding: EdgeInsets.all(20),
+                              child: MenuItem(
+                                menuData: menuItemsData[index],
+                              ),
                             ),
                           );
                         }),
