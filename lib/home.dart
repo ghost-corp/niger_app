@@ -1,11 +1,82 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:niger_app/globals/colors.dart';
 import 'package:niger_app/globals/screen_size.dart';
+import 'widgets/menu_item.dart';
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    List<MenuData> menuItemsData = [
+      MenuData(
+          icon: Icons.history,
+          iconSize: kWidth(context) * 0.15,
+          text: "History",
+          onTap: () {}),
+      MenuData(
+          icon: Icons.tram,
+          iconSize: kWidth(context) * 0.15,
+          text: "Tourism",
+          onTap: () {}),
+      MenuData(
+          image: Image.asset(
+            "assets/icons/groupX3.png",
+            color: Colors.white,
+          ),
+          iconSize: kWidth(context) * 0.15,
+          text: "People",
+          useImageInPlaceOfIcon: true,
+          onTap: () {}),
+      MenuData(
+          image: Image.asset(
+            "assets/icons/cultureX3.png",
+            color: Colors.white,
+          ),
+          iconSize: kWidth(context) * 0.15,
+          text: "Culture",
+          useImageInPlaceOfIcon: true,
+          onTap: () {}),
+      MenuData(
+          image: Image.asset(
+            "assets/icons/sportX3.png",
+            color: Colors.white,
+          ),
+          iconSize: kWidth(context) * 0.15,
+          text: "Sports",
+          useImageInPlaceOfIcon: true,
+          onTap: () {}),
+      MenuData(
+          image: Image.asset(
+            "assets/icons/lgaX3.png",
+            color: Colors.white,
+          ),
+          iconSize: kWidth(context) * 0.17,
+          text: "LGA",
+          useImageInPlaceOfIcon: true,
+          onTap: () {}),
+      MenuData(
+          icon: Icons.directions_bus,
+          iconSize: kWidth(context) * 0.15,
+          text: "NSTA",
+          onTap: () {}),
+      MenuData(
+          image: Image.asset(
+            "assets/icons/emergencyX3.png",
+            color: Colors.white,
+          ),
+          iconSize: kWidth(context) * 0.17,
+          text: "Emergency",
+          useImageInPlaceOfIcon: true,
+          onTap: () {}),
+      MenuData(
+          icon: Icons.camera_alt,
+          iconSize: kWidth(context) * 0.15,
+          text: "Gallery",
+          onTap: () {})
+    ];
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Center(
         child: Column(
           children: <Widget>[
@@ -19,6 +90,7 @@ class Home extends StatelessWidget {
                   child: TextField(
                     style: TextStyle(height: 0.6),
                     decoration: InputDecoration(
+                        hintText: "Search places",
                         fillColor: Colors.white,
                         filled: true,
                         prefixIcon: Padding(
@@ -44,34 +116,55 @@ class Home extends StatelessWidget {
             Expanded(
               child: Stack(
                 children: <Widget>[
+                  Stack(
+                    children: <Widget>[
+                      Container(
+                        height: double.infinity,
+                        width: kWidth(context),
+                        color: kAlternateColorDark10,
+                      ),
+                      ClipPath(
+                        clipper: ContourClipper(ContourLayer.LAYER_THREE),
+                        child: Container(
+                          height: double.infinity,
+                          width: kWidth(context),
+                          color: kAlternateColorDark50,
+                        ),
+                      ),
+                      ClipPath(
+                        clipper: ContourClipper(ContourLayer.LAYER_TWO),
+                        child: Container(
+                          height: double.infinity,
+                          width: kWidth(context),
+                          color: kAlternateColorDark100,
+                        ),
+                      ),
+                      ClipPath(
+                        clipper: ContourClipper(ContourLayer.LAYER_ONE),
+                        child: Container(
+                          height: double.infinity,
+                          width: kWidth(context),
+                          color: kAlternateColorDark200,
+                        ),
+                      )
+                    ],
+                  ),
                   Container(
                     height: double.infinity,
                     width: kWidth(context),
-                    color: kAlternateColorDark10,
-                  ),
-                  ClipPath(
-                    clipper: ContourClipper(ContourLayer.LAYER_THREE),
-                    child: Container(
-                      height: double.infinity,
-                      width: kWidth(context),
-                      color: kAlternateColorDark50,
-                    ),
-                  ),
-                  ClipPath(
-                    clipper: ContourClipper(ContourLayer.LAYER_TWO),
-                    child: Container(
-                      height: double.infinity,
-                      width: kWidth(context),
-                      color: kAlternateColorDark100,
-                    ),
-                  ),
-                  ClipPath(
-                    clipper: ContourClipper(ContourLayer.LAYER_ONE),
-                    child: Container(
-                      height: double.infinity,
-                      width: kWidth(context),
-                      color: kAlternateColorDark200,
-                    ),
+                    child: GridView.builder(
+                        padding: EdgeInsets.only(top: 30),
+                        itemCount: menuItemsData.length,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 3, childAspectRatio: 0.9),
+                        itemBuilder: (context, index) {
+                          return Padding(
+                            padding: EdgeInsets.all(20),
+                            child: MenuItem(
+                              menuData: menuItemsData[index],
+                            ),
+                          );
+                        }),
                   )
                 ],
               ),
