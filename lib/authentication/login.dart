@@ -170,7 +170,9 @@ class _LoginPageState extends State<LoginPage> {
                           padding: EdgeInsets.only(top: height * 0.05),
                           child: Center(
                             child: FlatButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, "home");
+                              },
                               padding: EdgeInsets.symmetric(
                                   vertical: height * 0.02,
                                   horizontal: width * 0.35),

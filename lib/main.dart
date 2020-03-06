@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:niger_app/authentication/login.dart';
 import 'package:niger_app/authentication/signup.dart';
 import 'package:niger_app/widgets/onboarding.dart';
+import 'home.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
       routes: {
         "Login": (context) => LoginPage(),
         "signup": (context) => SignUpPage(),
-        "onboarding": (context) => OnBoarding()
+        "onboarding": (context) => OnBoarding(),
+        "home": (context) => Home()
       },
     );
   }
