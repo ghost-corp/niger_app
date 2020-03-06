@@ -130,25 +130,15 @@ class _LoginPageState extends State<LoginPage> {
                                 value: checkedValue,
                               ),
                               Padding(
-                                padding: EdgeInsets.only(top: 15.0),
+                                padding: EdgeInsets.only(top: 16.0),
                                 child: GestureDetector(
-                                  child: RichText(
-                                      text: TextSpan(
-                                          text: 'I Agree To All Statements In ',
-                                          style: TextStyle(
-                                              fontSize: 13,
-                                              color: Colors.grey.shade700),
-                                          children: <TextSpan>[
-                                        TextSpan(
-                                            text: 'Terms Of Service',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.w600,
-                                                color: Colors.green.shade800,
-                                                fontSize: 13,
-                                                decoration:
-                                                    TextDecoration.underline,
-                                                decorationColor: Colors.red))
-                                      ])),
+                                  child: Text(
+                                    "Remember Me",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.grey.shade600
+                                    ),
+                                  ),
                                 ),
                               ),
                             ],
