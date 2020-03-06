@@ -8,7 +8,7 @@ import 'widgets/menu_item.dart';
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    double iconSize = kWidth(context) * 0.14;
+    double iconSize = kWidth(context) * 0.15;
     List<MenuData> menuItemsData = [
       MenuData(
           icon: Icons.history,
