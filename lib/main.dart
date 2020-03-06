@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:niger_app/authentication/login.dart';
 import 'package:niger_app/authentication/signup.dart';
+import 'package:niger_app/globals/colors.dart';
 import 'package:niger_app/widgets/onboarding.dart';
 import 'home.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.indigo,
+        primaryColor: kPrimaryColor,
       ),
       home: OnBoarding(),
       debugShowCheckedModeBanner: false,
