@@ -43,13 +43,35 @@ class _OnBoardingState extends State<OnBoarding> {
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.white70, fontSize: 22),
           ),
-          iconAssetPath: "")
+          iconAssetPath: ""),
+
+      PageModel(
+        color: kAlternateColorDark300,
+        heroAssetPath: "assets/images/arewa.jpg",
+        title: Text(
+            "Lorem ipsum",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.grey.shade500,
+            fontSize: 24
+          ),
+        ),
+        body: Text(
+          "Lorem ipsumm dolor sit amet, consetetur sadipscing elitr, sed",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.white70,
+            fontSize: 22
+          ),
+        ),
+        iconAssetPath: ""
+      )
     ];
 
     return Scaffold(
       body: FancyOnBoarding(
-        doneButtonText: "Done",
-        skipButtonText: "Skip",
+        doneButtonText: "GET STARTED",
+        skipButtonText: "SKIP",
         pageList: pageList,
         onDoneButtonPressed: () {
           Navigator.of(context).pushNamed("signup");
