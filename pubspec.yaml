@@ -55,6 +55,7 @@ flutter:
     - assets/icons/sportX3.png
     - assets/icons/nstaX3.png
     - assets/icons/emergencyX3.png
+    - assets/images/arewa.jpg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
