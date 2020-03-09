@@ -75,101 +75,106 @@ class Home extends StatelessWidget {
     ];
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            Container(
-              width: kWidth(context),
-              height: 90,
-              color: kAlternateColorDark300,
-              child: Center(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 20, right: 20),
-                  child: TextField(
-                    style: TextStyle(height: 0.6),
-                    decoration: InputDecoration(
-                        hintText: "Search places",
-                        fillColor: Colors.white,
-                        filled: true,
-                        prefixIcon: Padding(
-                          padding: EdgeInsets.only(left: 15, right: 10),
-                          child: Icon(
-                            Icons.search,
-                            size: 30,
-                            color: Colors.grey,
+      body: InkWell(
+        onTap: () {
+          FocusScope.of(context).requestFocus(new FocusScopeNode());
+        },
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              Container(
+                width: kWidth(context),
+                height: 90,
+                color: kAlternateColorDark300,
+                child: Center(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 20, right: 20),
+                    child: TextField(
+                      style: TextStyle(height: 0.6),
+                      decoration: InputDecoration(
+                          hintText: "Search places",
+                          fillColor: Colors.white,
+                          filled: true,
+                          prefixIcon: Padding(
+                            padding: EdgeInsets.only(left: 15, right: 10),
+                            child: Icon(
+                              Icons.search,
+                              size: 30,
+                              color: Colors.grey,
+                            ),
                           ),
-                        ),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                            borderSide:
-                                BorderSide(width: 0, color: Colors.black)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                            borderSide:
-                                BorderSide(width: 0, color: Colors.black))),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide:
+                                  BorderSide(width: 0, color: Colors.black)),
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide:
+                                  BorderSide(width: 0, color: Colors.black))),
+                    ),
                   ),
                 ),
               ),
-            ),
-            Expanded(
-              child: Stack(
-                children: <Widget>[
-                  Stack(
-                    children: <Widget>[
-                      Container(
-                        height: double.infinity,
-                        width: kWidth(context),
-                        color: kAlternateColorDark10,
-                      ),
-                      ClipPath(
-                        clipper: ContourClipper(ContourLayer.LAYER_THREE),
-                        child: Container(
+              Expanded(
+                child: Stack(
+                  children: <Widget>[
+                    Stack(
+                      children: <Widget>[
+                        Container(
                           height: double.infinity,
                           width: kWidth(context),
-                          color: kAlternateColorDark50,
+                          color: kAlternateColorDark10,
                         ),
-                      ),
-                      ClipPath(
-                        clipper: ContourClipper(ContourLayer.LAYER_TWO),
-                        child: Container(
-                          height: double.infinity,
-                          width: kWidth(context),
-                          color: kAlternateColorDark100,
+                        ClipPath(
+                          clipper: ContourClipper(ContourLayer.LAYER_THREE),
+                          child: Container(
+                            height: double.infinity,
+                            width: kWidth(context),
+                            color: kAlternateColorDark50,
+                          ),
                         ),
-                      ),
-                      ClipPath(
-                        clipper: ContourClipper(ContourLayer.LAYER_ONE),
-                        child: Container(
-                          height: double.infinity,
-                          width: kWidth(context),
-                          color: kAlternateColorDark200,
+                        ClipPath(
+                          clipper: ContourClipper(ContourLayer.LAYER_TWO),
+                          child: Container(
+                            height: double.infinity,
+                            width: kWidth(context),
+                            color: kAlternateColorDark100,
+                          ),
                         ),
-                      )
-                    ],
-                  ),
-                  Container(
-                    height: double.infinity,
-                    width: kWidth(context),
-                    child: GridView.builder(
-                        itemCount: menuItemsData.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 3, childAspectRatio: 0.9),
-                        itemBuilder: (context, index) {
-                          return Align(
-                            alignment: Alignment.bottomCenter,
-                            child: Padding(
-                              padding: EdgeInsets.all(20),
-                              child: MenuItem(
-                                menuData: menuItemsData[index],
+                        ClipPath(
+                          clipper: ContourClipper(ContourLayer.LAYER_ONE),
+                          child: Container(
+                            height: double.infinity,
+                            width: kWidth(context),
+                            color: kAlternateColorDark200,
+                          ),
+                        )
+                      ],
+                    ),
+                    Container(
+                      height: double.infinity,
+                      width: kWidth(context),
+                      child: GridView.builder(
+                          itemCount: menuItemsData.length,
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 3, childAspectRatio: 0.9),
+                          itemBuilder: (context, index) {
+                            return Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Padding(
+                                padding: EdgeInsets.all(20),
+                                child: MenuItem(
+                                  menuData: menuItemsData[index],
+                                ),
                               ),
-                            ),
-                          );
-                        }),
-                  )
-                ],
-              ),
-            )
-          ],
+                            );
+                          }),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
       drawer: Drawer(
