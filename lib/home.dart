@@ -197,25 +197,28 @@ class Home extends StatelessWidget {
                       colorBlendMode: BlendMode.darken,
                     ),
                   ),
-
+                  Container(
+                    height: double.infinity,
+                    color: Color.fromARGB(100, 0, 0, 0),
+                  ),
                   Padding(
                     padding: EdgeInsets.only(
-                      top: kHeight(context)*0.1,
-                      left: 5
+                        top: kHeight(context)*0.1,
+                        left: 5
                     ),
                     child: Center(
                       child: Text(
-                          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed"
-                          " diam nonumy eirmod tempor invidunt ut labore et dolore.",
+                        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed"
+                            " diam nonumy eirmod tempor invidunt ut labore et dolore.",
                         style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.white
+                            fontSize: 14,
+                            color: Colors.white
                         ),
                       ),
                     ),
                   )
                 ],
-              ),
+              )
             ),
 
             Padding(
